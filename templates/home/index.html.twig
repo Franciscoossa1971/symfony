@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<h1>Hola</h1>
+
+{% if app.user %}
+     <p>
+        Esta autorizado el usuario con email: {{ app.user.userIdentifier }}
+        <br>
+        <a href="{{ path('app_logout') }}">Logout</a>        
+        <br>
+        {% if is_granted('ROLE_ADMIN') %}
+             <a href="{{ path('admin_user_list') }}" class="btn btn-secondary">Editar roles de usuarios</a>
+        {% endif %}
+
+     </p>
+{% else %}
+    <p>
+        <a href="{{ path('app_register') }}"> Registro</a> or
+        <a href="{{ path('app_login') }}"> Login</a> 
+    </p>
+
+{% endif %}
+
+{% endblock %}

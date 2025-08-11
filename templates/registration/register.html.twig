@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Nuevo Usuario</h1>
+
+    {# Si el formulario tiene errores globales, muéstralos #}
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        <div class="form-group">
+            {{ form_row(registrationForm.email) }}
+            {{ form_errors(registrationForm.email) }}  {# Mostrar errores del campo email #}
+        </div>
+
+        <div class="form-group">
+            {{ form_row(registrationForm.plainPassword, { 'label': 'Password' }) }}
+            {{ form_errors(registrationForm.plainPassword) }}  {# Mostrar errores del campo password #}
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+        <button type="reset" class="btn">Cancelar</button>
+
+    {{ form_end(registrationForm) }}
+
+    <a href="{{ path('app_home') }}" class="btn btn-link">Volver a inicio</a>
+{% endblock %}

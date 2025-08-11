@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Roles de Usuario{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">Editar Roles: {{ user.email }}</h1>
+
+    {{ form_start(form) }}
+        <div class="mb-3">
+            {{ form_label(form.roles) }}
+            <div class="form-check">
+                {{ form_widget(form.roles) }}
+            </div>
+            {{ form_errors(form.roles) }}
+        </div>
+
+        <button class="btn btn-success">Guardar</button>
+        <a href="{{ path('admin_user_list') }}" class="btn btn-secondary">Volver a la lista</a>
+    {{ form_end(form) }}
+</div>
+{% endblock %}
