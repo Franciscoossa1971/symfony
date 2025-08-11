@@ -8,3 +8,73 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+
+# Symfony Standard Edition
+/app/bootstrap.php.cache
+/app/cache/*
+/app/logs/*
+/app/config/parameters.yml
+/app/config/parameters.php
+
+# Symfony 4+ (Flex structure)
+!/var
+/var/*
+!/var/cache/
+/var/cache/*
+!/var/log/
+/var/log/*
+!/var/sessions/
+/var/sessions/*
+!/var/data/
+/var/data/*
+/.env.local
+/.env.*.local
+.env.test
+.env.backup
+
+# Composer
+/vendor/
+/composer.lock
+
+# PHPUnit
+/phpunit.xml
+/phpunit.xml.dist
+/.phpunit.result.cache
+
+# IDEs and editors
+/.idea/
+/*.sublime-project
+/*.sublime-workspace
+*.swp
+*.swo
+*.bak
+*.tmp
+*.DS_Store
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+*.log
+
+# Coverage reports
+/coverage/
+
+# Symfony Encore / Webpack
+/public/build/
+/public/bundles/
+
+# Translations cache
+/translations/*.*
+!translations/*.yaml
+
+# Docker
+.docker/
+docker-compose.override.yml
